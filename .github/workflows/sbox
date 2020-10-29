@@ -1,0 +1,39 @@
+sbox
+/master
+#0efd76
+Adding +assetsystem to sbox_game
+move content\sbox to game\sbox_src
+move content/core to game/core_src
+Asset system content is in *_src instead of ../content/*
+Path Fixups
+Material editing works with new *_src paths
+Rust addon
+Changing default console port (vconsole fucks with it)
+Resource Compiler, compile to the right folder when addon
+I'm going to assume we don't need all this readonly shit
+Load asset info again
+material editor, hammer working with addons and addon *_src
+Citizen addon
+Colours
+Don't mark mod paths as read only
+ModIsVisibleToAsset always returns true
+Allow loading from any "mod" in hammer
+Lets treat any files ending with _c as lfs
+citizen skin
+lfs
+Fixed model editor
+Fix SkipToModRelativePathFromGameOrContentRelativePath in fileutils to work with our layout
+Add ignore tools_thumbnail_cache.bin
+SetModGameSubdir - skip the logic, always set it to sbox
+Fixed IsAddon logic being backwards in ComputeOutputFileName
+Local lightmap compilation is assumed
+Properly close clr host on shutdown
+Remove material debug
+FileSystem:AddAddonsSearchPaths (review this later)
+Hammer map target location fix
+Fixed CResourceCompilerContext::ContentPathToFullPath for new layout
+if we're compiling in %temp% then don't treat as an addon because the paths will be all fucky
+Call AddAddonsSearchPaths in standalone resourcecompiler.exe
+CResourceCompilerPathScope - don't limit/remove search paths - we don't give a fuck about that shit
+ComputeVpkName can be a shit ton simpler
+
